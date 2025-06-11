@@ -22,7 +22,6 @@ public:
                     return {i, j};
             }
         }
-        return {};
     }
     // this one is s slightly less brute forcey way to get the indices, first it creates an array of indices
     // then it sorts them by their coresponding numeric values ascending order

@@ -21,5 +21,5 @@ This function does the reverse process of the previous one. It extracts the digi
 
 **Abstract:**
 
- Same as before I extracted the digits into vectors, then i reversed those. after this i implemented a digit addittion logic, that loops through the vectors and adds the current digits together, if the digits sum is greater then 10 I extract the last digit with the modulus operator then add 1 to the carry value which is added to the next digit in the loop. If the loop ends and i still carry a value, that would be pushed back to the end.
+ Same as before, I extracted the digits into vectors, then i reversed those. after this I implemented a digit addittion logic, that loops through the vectors and adds the current digits together, if the digits sum is greater then 10 I extract the last digit with the modulus operator then add 1 to the carry value which is added to the next digit in the loop. If the loop ends and i still carry a value, that would be pushed back to the end.
 
