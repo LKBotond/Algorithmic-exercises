@@ -23,46 +23,29 @@ public:
 
         for (int i = 0; i < s.size(); i++)
         {
+            convertor[i][depth] = s[i];
             if (descending)
             {
-                for (int j = 0; j <= numRows; j++)
-                {
-                    convertor[i][j] = s[position];
-                    position++;
-                    depth++;
-                    if (position == s.size())
-                    {
-                        break;
-                    }
-                }
-                if (depth == numRows)
-                {
-                    descending = false;
-                }
+                depth++;
             }
             else
             {
-                depth = depth - 1;
-                convertor[i][depth] == s[position];
-                position++;
-                if (position == s.size())
-                {
-                    break;
-                }
-                if (depth == 0)
-                {
-                    descending = true;
-                }
+                depth--;
+            }
+            if (depth == 0 || depth == numRows - 1)
+            {
+                descending = !descending;
             }
         }
+
         std::string solution;
-        for (int i = 0; i < s.size(); i++)
+        for (int i = 0; i < numRows; i++)
         {
-            for (int j = 0; j < numRows + 1; j++)
+            for (int j = 0; j < s.size(); j++)
             {
-                if (convertor[i][j] != ' ')
+                if (convertor[j][i] != ' ')
                 {
-                    solution.push_back(convertor[i][j]);
+                    solution += convertor[j][i];
                 }
             }
         }
@@ -88,21 +71,21 @@ public:
             convertor[row] += c;
             if (row == 0 || row == numRows - 1)
             {
-                descending = !!!descending;
+                descending = !descending;
             }
             if (descending)
             {
-                row = row - 1;
+                row++;
             }
             else
             {
-                row = row + 1;
+                row--;
             }
         }
         std::string solution;
         for (std::string line : convertor)
         {
-            solution+=line;
+            solution += line;
         }
         return solution;
     }
