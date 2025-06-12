@@ -3,7 +3,7 @@
 class Solution1
 {
 public:
-    std::string checlLeftRight(const std::string &string, int left, int right)
+    std::string checklLeftRight(const std::string &string, int left, int right)
     {
         while (left >= 0 && right < string.size() && string[left] == string[right])
         {
@@ -17,8 +17,8 @@ public:
         std::string longest;
         for (int i = 0; i < s.size(); i++)
         {
-            std::string odd = checlLeftRight(s, i, i);
-            std::string even = checlLeftRight(s, i, i + 1);
+            std::string odd = checklLeftRight(s, i, i);
+            std::string even = checklLeftRight(s, i, i + 1);
             if (odd.size() > longest.size())
             {
                 longest = odd;
@@ -34,7 +34,7 @@ public:
 class Solution2
 {
 public:
-    std::string checlLeftRight(const std::string &string, int left, int right)
+    std::string checkLeftRight(const std::string &string, int left, int right)
     {
         while (left >= 0 && right < string.size() && string[left] == string[right])
         {
@@ -48,8 +48,8 @@ public:
         std::string longest;
         for (int i = 0; i < s.size(); i++)
         {
-            std::string odd = checlLeftRight(s, i, i);
-            std::string even = checlLeftRight(s, i, i + 1);
+            std::string odd = checkLeftRight(s, i, i);
+            std::string even = checkLeftRight(s, i, i + 1);
             if (odd.size() > longest.size())
             {
                 longest = odd;
